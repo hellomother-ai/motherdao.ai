@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotherDAO Stream</title>
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background-color: #000;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar-links a:hover {
+            color: #ccc;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .stream-container {
+            flex: 1;
+            min-width: 0;
+            aspect-ratio: 16/9;
+        }
+
+        .stream-container iframe {
+            border-radius: 0.5rem;
+        }
+
+        .chat-container {
+            width: 25%;
+            background: #f5f5f5;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .footer {
+            background-color: #000;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .chat-container {
+                width: 100%;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">MotherDAO</a>
+        <div class="navbar-links">
+            <a href="https://x.com/motherdao_ai" target="_blank">Twitter</a>
+            <a href="/terms-and-conditions.html">Terms & Conditions</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="stream-container">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/krJtOeZTZwk?autoplay=1&mute=1" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+        <div class="chat-container">
+            <widgetbot
+                server="299881420891881473"
+                channel="355719584830980096"
+                shard="https://e-motherdao.widgetbot.co"
+                width="100%"
+                height="100%"
+            ></widgetbot>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <nav>
+            <a href="https://x.com/motherdao_ai" target="_blank">Twitter</a>
+            <a href="/terms-and-conditions.html">Terms & Conditions</a>
+        </nav>
+    </footer>
+</body>
+</html>
