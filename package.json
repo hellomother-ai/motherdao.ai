@@ -1,0 +1,31 @@
+{
+  "name": "axis-standalone",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "postbuild": "turbo run lint",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json,css,html}\"",
+    "prepare": "husky",
+    "storybook": "turbo run storybook",
+    "test": "turbo run test",
+    "test:unit": "turbo run test:unit"
+  },
+  "devDependencies": {
+    "husky": "^9.0.6",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "turbo": "^1.12.4"
+  },
+  "packageManager": "pnpm@8.15.5+sha256.4b4efa12490e5055d59b9b9fc9438b7d581a6b7af3b5675eb5c5f447cee1a589",
+  "resolutions": {
+    "@tanstack/react-query": "5.18.1",
+    "graphql": "16.8.1",
+    "react": "18.3.1",
+    "viem": "2.17.3",
+    "wagmi": "2.5.2"
+  }
+}

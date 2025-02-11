@@ -1,0 +1,355 @@
+@import "./fonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base colors, theme agnostic, primitive */
+    --blue-400: 201 88% 71%;
+    --blue-600: 220 65% 60%;
+
+    --green-100: 68 98% 82%;
+    --green-200: 79 88% 71%;
+    --green-300: 79 65% 60%;
+    --green-400: 79 87% 50%;
+    --green-500: 79 87% 40%;
+
+    --red-200: 40 100% 77%;
+    --red-300: 32 99% 66%;
+    --red-500: 11 100% 63%;
+    --red-600: 0 100% 51%;
+
+    --gray-50: 0 0% 100%;
+    --gray-100: 60 17% 95%;
+    --gray-200: 60 5% 89%;
+    --gray-300: 60 21% 90%;
+    --gray-400: 60 22% 80%;
+    --gray-500: 60 15% 74%;
+    --gray-600: 287 10% 38%;
+    --gray-650: 287 10% 38%;
+    --gray-700: 291 10% 28%;
+    --gray-800: 288 10% 20%;
+    --gray-900: 290 9% 14%;
+
+    /* Brand colors, theme agnostic, semantic */
+    /* TODO: move to dapp stylesheet since its brand specific? */
+    --brand-primary-500: var(--blue-400);
+    --brand-primary-600: var(--blue-600);
+
+    /* Theme colors, brand aware, semantic */
+    --primary-500: var(--brand-primary-500);
+    --primary-600: var(--brand-primary-600);
+
+    /* Theme colors, theme aware, semantic */
+    --feedback-alert: var(--tertiary-600);
+    --feedback-success: var(--secondary-400);
+    --feedback-warning: var(--tertiary-300);
+
+    --surface-primary-fill: var(--neutral-50);
+    --surface-primary-outline: var(--neutral-100);
+    --surface-secondary-fill: var(--neutral-200);
+    --surface-secondary-outline: var(--neutral-400);
+    --surface-tertiary-fill: var(--neutral-300);
+    --surface-tertiary-outline: var(--neutral-500);
+    --surface-highlight-fill: var(--neutral-50);
+    --surface-highlight-outline: var(--primary-600);
+
+    --surface-progress-fill: var(--green-100);
+
+    --text-primary: var(--neutral-900);
+    --text-secondary: var(--neutral-700);
+    --text-tertiary: var(--neutral-600);
+    --text-highlight: var(--brand-primary-600);
+    --text-disabled: var(--neutral-400);
+    --text-success: var(--secondary-500);
+    --text-alert: var(--tertiary-600);
+
+    --spacing-100: 2px;
+    --spacing-200: 4px;
+    --spacing-300: 8px;
+    --spacing-350: 14px;
+    --spacing-400: 16px;
+    --spacing-500: 24px;
+    --spacing-600: 32px;
+    --spacing-700: 48px;
+    --spacing-800: 64px;
+
+    --sizing-100: 8px;
+    --sizing-150: 14px;
+    --sizing-200: 16px;
+    --sizing-300: 24px;
+    --sizing-400: 32px;
+    --sizing-500: 40px;
+    --sizing-600: 48px;
+    --sizing-700: 64px;
+    --sizing-800: 88px;
+
+    /* TODO: radius is from the old root - decide whether to leave these helpers or not */
+    --radius: 0.5rem;
+  }
+
+  .light {
+    /* Theme colors */
+    --app: 270 8% 95%;
+
+    --neutral-50: var(--gray-50);
+    --neutral-100: var(--gray-100);
+    --neutral-200: var(--gray-200);
+    --neutral-300: var(--gray-300);
+    --neutral-400: var(--gray-400);
+    --neutral-500: var(--gray-500);
+    --neutral-600: var(--gray-600);
+    --neutral-650: var(--gray-650);
+    --neutral-700: var(--gray-700);
+    --neutral-800: var(--gray-800);
+    --neutral-900: var(--gray-900);
+
+    --secondary-100: var(--green-100);
+    --secondary-200: var(--green-200);
+    --secondary-300: var(--green-300);
+    --secondary-400: var(--green-400);
+
+    --tertiary-200: var(--red-200);
+    --tertiary-300: var(--red-300);
+    --tertiary-500: var(--red-500);
+    --tertiary-600: var(--red-600);
+  }
+
+  .dark {
+    /* Theme colors */
+    --app: 270 8% 5%;
+
+    --neutral-50: var(--gray-900);
+    --neutral-100: var(--gray-800);
+    --neutral-200: var(--gray-700);
+    --neutral-300: var(--gray-650);
+    --neutral-400: var(--gray-600);
+    --neutral-500: var(--gray-500);
+    --neutral-600: var(--gray-400);
+    --neutral-650: var(--gray-300);
+    --neutral-700: var(--gray-200);
+    --neutral-800: var(--gray-100);
+    --neutral-900: var(--gray-50);
+
+    --secondary-100: var(--green-100);
+    --secondary-200: var(--green-200);
+    --secondary-300: var(--green-300);
+    --secondary-400: var(--green-400);
+
+    --tertiary-200: var(--red-200);
+    --tertiary-300: var(--red-300);
+    --tertiary-500: var(--red-500);
+    --tertiary-600: var(--red-600);
+
+    --brand-primary-500: var(--red-200);
+    --brand-primary-600: var(--red-300);
+
+    /* Theme colors, brand aware, semantic */
+    --primary-500: var(--brand-primary-500);
+    --primary-600: var(--brand-primary-600);
+
+    --tertiary-200: var(--blue-400);
+    --tertiary-300: var(--blue-400);
+    --tertiary-500: var(--blue-600);
+    --tertiary-600: var(--blue-600);
+
+    /* Theme colors, theme aware, semantic */
+    --feedback-alert: var(--red-200);
+    --feedback-success: var(--green-300);
+    --feedback-warning: var(--red-600);
+
+    --surface-primary-fill: var(--neutral-50);
+    --surface-primary-outline: var(--neutral-100);
+    --surface-secondary-fill: var(--neutral-200);
+    --surface-secondary-outline: var(--neutral-400);
+    --surface-tertiary-fill: var(--neutral-300);
+    --surface-tertiary-outline: var(--neutral-500);
+    --surface-highlight-fill: var(--neutral-50);
+    --surface-highlight-outline: var(--primary-600);
+
+    --text-primary: var(--neutral-900);
+    --text-secondary: var(--neutral-700);
+    --text-tertiary: var(--neutral-600);
+  }
+}
+
+/* CSS Reset */
+@layer base {
+  /*prettier-ignore*/
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /*prettier-ignore*/
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  /*prettier-ignore*/
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  /*prettier-ignore*/
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+
+  /* Remove number input arrows */
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /*prettier-ignore*/
+  h1, h2, h3, h4 {
+    @apply scroll-m-20 tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply border-b pb-2 text-3xl font-semibold no-underline first:mt-0;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  p {
+    /*@apply leading-7; */
+  }
+}
+
+@layer components {
+  .orange-grad {
+    background-image: linear-gradient(
+      hsla(11, 100%, 63%, 1),
+      hsla(32, 99%, 66%, 1),
+      hsla(40, 100%, 77%, 1)
+    );
+  }
+
+  .bg-hero-banner {
+    background: linear-gradient(
+      42deg,
+      #cdf675 0%,
+      #75c8f6 49.99%,
+      #75a1f6 99.97%
+    );
+  }
+
+  .loading-gradient {
+    background: linear-gradient(
+      42deg,
+      #d3d3d3 0%,
+      #a9a9a9 49.99%,
+      #696969 99.97%
+    );
+  }
+
+  .green-gradient {
+    background: linear-gradient(
+      72deg,
+      #cdf675 0%,
+      #75c8f6 49.99%,
+      #75a1f6 99.97%
+    );
+  }
+
+  .dark .green-gradient {
+    background: linear-gradient(
+      72deg,
+      hsla(11, 100%, 63%, 1),
+      hsla(32, 99%, 66%, 1),
+      hsla(40, 100%, 77%, 1)
+    );
+  }
+
+  .green-gradient-border {
+    position: relative;
+  }
+
+  .green-gradient-border::before {
+    @apply green-gradient;
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: 8px;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .claim-points-gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(117, 161, 246, 1) 0%,
+      rgba(117, 200, 246, 1) 50%,
+      rgba(205, 246, 117, 1) 100%
+    );
+  }
+
+  .claim-points-gradient-horizontal {
+    background: linear-gradient(
+      90deg,
+      rgba(205, 246, 117, 1) 0%,
+      rgba(117, 200, 246, 1) 50%,
+      rgba(117, 161, 246, 1) 100%
+    );
+  }
+
+  .banner-shadow {
+    -webkit-box-shadow: -2px 10px 78px 1px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: -2px 10px 78px 1px rgba(0, 0, 0, 0.57);
+    box-shadow: -2px 10px 78px 1px rgba(0, 0, 0, 0.57);
+  }
+}

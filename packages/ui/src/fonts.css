@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "AeonikFono";
+  src:
+    url("/fonts/AeonikFono-Light.woff2") format("woff2"),
+    url("/fonts/AeonikFono-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "AeonikFono";
+  src:
+    url("/fonts/AeonikFono-Regular.woff2") format("woff2"),
+    url("/fonts/AeonikFono-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "AeonikFono";
+  src:
+    url("/fonts/AeonikFono-Bold.woff2") format("woff2"),
+    url("/fonts/AeonikFono-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "AeonikPro";
+  src:
+    url("/fonts/AeonikPro-Light.woff2") format("woff2"),
+    url("/fonts/AeonikPro-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "AeonikPro";
+  src:
+    url("/fonts/AeonikPro-Regular.woff2") format("woff2"),
+    url("/fonts/AeonikPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "AeonikPro";
+  src:
+    url("/fonts/AeonikPro-Bold.woff2") format("woff2"),
+    url("/fonts/AeonikPro-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: block;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@repo/tailwind-config",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./tailwind.config.js",
+  "files": [
+    "./tailwind.config.js",
+    "./postcss.config.js"
+  ],
+  "exports": {
+    ".": "./tailwind.config.js",
+    "./postcss": "./postcss.config.js",
+    "./tailwind": "./tailwind.config.js"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "tailwindcss-animate": "^1.0.7"
+  }
+}

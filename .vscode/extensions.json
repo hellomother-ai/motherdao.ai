@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "mquandalle.graphql",
+    "graphql.vscode-graphql",
+    "graphql.vscode-graphql-syntax",
+    "naumovs.color-highlight",
+    "dbaeumer.vscode-eslint",
+    "davidanson.vscode-markdownlint",
+    "bradlc.vscode-tailwindcss",
+    "gruntfuggly.todo-tree",
+    "esbenp.prettier-vscode"
+  ]
+}

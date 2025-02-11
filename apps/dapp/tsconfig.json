@@ -1,0 +1,34 @@
+{
+  "extends": "@repo/typescript-config/react-app.json",
+  "include": [
+    "src",
+    "../../packages/ui/src/components/sort-button.tsx",
+    "../../packages/types",
+    "../ipfs-api/src/express.d.ts"
+  ],
+  "exclude": ["cypress"],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "paths": {
+      "components/*": ["src/components/*"],
+      "components": ["src/components/index"],
+      "config/*": ["src/config/*"],
+      "context/*": ["src/context/*"],
+      "modules/*": ["src/modules/*"],
+      "pages/*": ["src/pages/*"],
+      "loaders/*": ["src/loaders/*"],
+      "hooks/*": ["src/hooks/*"],
+      "state/*": ["src/state/*"],
+      "utils/*": ["src/utils/*"],
+      "utils": ["src/utils/index"],
+      "@/utils": ["../../packages/ui/src/utils.ts"],
+      "@/components/primitives/*": [
+        "../../packages/ui/src/components/primitives/*"
+      ],
+      "@/components": ["../../packages/ui/src/components/index.ts"]
+    },
+    "moduleResolution": "Bundler"
+  },
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
