@@ -14,7 +14,7 @@ import {
   optimisticUpdate,
 } from "modules/auction/utils/optimistic";
 import { getAuctionId } from "../utils/get-auction-id";
-import { useAuctionsV2 } from "./use-auctionsv2";
+import { useAuctions } from "./use-auctions";
 
 export function useBidAuction(
   chainId: string | number,
@@ -24,7 +24,7 @@ export function useBidAuction(
   callbackData: `0x${string}`,
   onSuccess?: () => void,
 ) {
-  const { data } = useAuctionsV2();
+  const { data } = useAuctions();
 
   const id = getAuctionId(chainId, lotId);
 

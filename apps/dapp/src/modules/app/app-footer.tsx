@@ -4,7 +4,7 @@ import { SOCIALS } from "../../../../../app-config";
 import { AppVersion } from "./app-version";
 import { AxisWordmark } from "./axis-wordmark";
 
-const { DISCORD, TWITTER, WEBSITE, CONTACT } = SOCIALS;
+const { DISCORD_URL, TWITTER_URL, WEBSITE_URL, CONTACT_URL } = SOCIALS;
 
 export function AppFooter() {
   return (
@@ -24,12 +24,12 @@ export function AppFooter() {
           )}
         >
           <SocialRow
-            discord={DISCORD}
-            twitter={TWITTER}
-            website={WEBSITE}
+            discord={DISCORD_URL}
+            twitter={TWITTER_URL}
+            website={WEBSITE_URL}
             iconClassName={"size-8"}
           />
-          <Link href={CONTACT} target="_blank">
+          <Link href={CONTACT_URL} target="_blank">
             <Button
               size="sm"
               className={cn(

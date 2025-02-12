@@ -1,13 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Button, Skeleton, useToggle } from "@repo/ui";
+import { Skeleton, useToggle } from "@repo/ui";
 import {
   type PropsWithAuction,
   type AuctionStatus,
   AuctionType,
   Auction,
 } from "@axis-finance/types";
-import { useAuction } from "modules/auction/hooks/use-auction";
 import { PageHeader } from "modules/app/page-header";
 import { ImageBanner } from "components/image-banner";
 import {
@@ -24,7 +23,7 @@ import { PurchaseList } from "modules/auction/purchase-list";
 import { Countdown } from "modules/auction/countdown";
 import AuctionProgressBar from "modules/auction/auction-progress-bar";
 import { useAccount, useSwitchChain } from "wagmi";
-import { useAuctionsV2 } from "modules/auction/hooks/use-auctionsv2";
+import { useAuctions } from "modules/auction/hooks/use-auctions";
 import { AUCTION_CHAIN_ID } from "../../../../app-config";
 
 const statuses: Record<
@@ -44,7 +43,7 @@ const statuses: Record<
 /** Displays Auction details and status*/
 export default function AuctionPage({ _auction }: { _auction?: Auction }) {
   const { chainId, lotId } = useParams();
-  const { isMultiple, data } = useAuctionsV2();
+  const { data } = useAuctions();
 
   const auction =
     _auction ??
@@ -91,7 +90,7 @@ export default function AuctionPage({ _auction }: { _auction?: Auction }) {
       <AuctionPageView auction={auction}>
         <PageHeader
           className="relative mt-0 lg:mt-0"
-          backNavigationPath={false ? "/#" : undefined}
+          backNavigationPath={"/#"}
           backNavigationText="Back to Launches"
           toggle={!isUSDQuote}
           toggleSymbol={auction.quoteToken.symbol}
@@ -114,7 +113,6 @@ export default function AuctionPage({ _auction }: { _auction?: Auction }) {
 
 export function AuctionPageView({
   auction,
-  isAuctionLoading,
   ...props
 }: React.PropsWithChildren<{
   auction: Auction;

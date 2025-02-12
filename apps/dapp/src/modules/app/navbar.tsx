@@ -9,6 +9,7 @@ import {
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { environment } from "utils/environment";
+import { AXIS_DOCS_URL } from "../../../../../app-config";
 type LinkConfig = {
   label: string;
   href: string;
@@ -31,7 +32,7 @@ export const mobileSideLinks = [
   { label: "Bridge", href: "/bridge", disabledOnTestnet: true },
   {
     label: "Docs",
-    href: "https://axis.finance/docs/overview",
+    href: AXIS_DOCS_URL,
     target: "_blank",
   },
 ] satisfies LinkConfig[];

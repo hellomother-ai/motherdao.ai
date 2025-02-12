@@ -1,6 +1,5 @@
 import { Pagination, cn, usePagination, UsdToggle } from "@repo/ui";
 import { PageContainer } from "modules/app/page-container";
-import { useState } from "react";
 import { Element as ScrollTargetElement } from "react-scroll";
 import { sortAuction } from "modules/auction/utils/sort-auctions";
 import {
@@ -9,7 +8,7 @@ import {
 } from "state/user-settings/auction-list-settings";
 import { useAtom } from "jotai";
 import React from "react";
-import { useAuctionsV2 } from "modules/auction/hooks/use-auctionsv2";
+import { useAuctions } from "modules/auction/hooks/use-auctions";
 import { AuctionParameterCard } from "modules/auction/auction-parameters-card";
 const ROW_LIMIT = 9;
 
@@ -17,11 +16,9 @@ export default function AuctionListPage() {
   const [userSettings, dispatch] = useAtom(auctionListSettingsAtom);
   const gridView = true;
 
-  const [sortByStatus, setSortByStatus] = useState<string | undefined>(
-    userSettings.activeSort,
-  );
+  const sortByStatus = userSettings.activeSort;
 
-  const { data, isLoading } = useAuctionsV2();
+  const { data, isLoading } = useAuctions();
 
   const filteredAuctions = data;
 

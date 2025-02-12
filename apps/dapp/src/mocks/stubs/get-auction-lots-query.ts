@@ -1,7 +1,4 @@
 import type { GetAuctionLotsQuery } from "@axis-finance/subgraph-client";
-import { allowedCurators } from "modules/app/curators";
-
-const allowedCurator = allowedCurators[0].address[0];
 
 export const stubGetAuctionLotsQuery = (
   overrides: Pick<GetAuctionLotsQuery["batchAuctionLots"][0], "chain">,
@@ -66,7 +63,6 @@ export const stubGetAuctionLotsQuery = (
         derivativeType: "01LIV",
         wrapDerivative: false,
         callbacks: "0x0000000000000000000000000000000000000000",
-        curator: allowedCurator,
         curatorApproved: false,
         curatorFee: "0",
         protocolFee: "0",
@@ -178,7 +174,6 @@ export const stubGetAuctionLotsQuery = (
         derivativeType: "01LIV",
         wrapDerivative: false,
         callbacks: "0x0000000000000000000000000000000000000000",
-        curator: allowedCurator,
         curatorApproved: false,
         curatorFee: "0",
         protocolFee: "0",
