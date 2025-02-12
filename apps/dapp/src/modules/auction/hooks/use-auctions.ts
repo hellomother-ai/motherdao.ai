@@ -1,8 +1,5 @@
-import type { Auction, GetAuctionLots } from "@axis-finance/types";
-import {
-  useLaunchByAddressQuery,
-  useLaunchesQuery,
-} from "@axis-finance/sdk/react";
+import type { Auction } from "@axis-finance/types";
+import { useLaunchByAddressQuery } from "@axis-finance/sdk/react";
 import { getAuctionStatus } from "modules/auction/utils/get-auction-status";
 import { sortAuction } from "modules/auction/utils/sort-auctions";
 import { formatAuctionTokens } from "modules/auction/utils/format-tokens";
@@ -11,7 +8,6 @@ import { getChainId } from "src/utils/chain";
 import { useTokenLists } from "state/tokenlist";
 import { useQueryAll } from "loaders/use-query-all";
 import { useSafeRefetch } from "./use-safe-refetch";
-import { environment } from "utils/environment";
 import {
   AUCTION_CHAIN_ID,
   AUCTION_TOKEN_ADDRESS,
@@ -29,12 +25,14 @@ export type AuctionsResult = {
 export const getAuctionsQueryKey = (chainId: number) =>
   ["auctions", chainId] as const;
 
-export function useAuctionsV2(): AuctionsResult {
+/**
+ * Fetches all auctions for the chain and token address specified in app-config
+ */
+export function useAuctions(): AuctionsResult {
   const { data, isLoading, isSuccess, isRefetching } = useLaunchByAddressQuery(
     AUCTION_CHAIN_ID,
     AUCTION_TOKEN_ADDRESS,
   );
-  console.log({ data, isLoading });
 
   // Refetch auctions if the cache is stale
   const refetch = useSafeRefetch(["auctions"]);

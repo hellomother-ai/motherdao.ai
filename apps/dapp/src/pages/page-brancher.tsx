@@ -1,9 +1,9 @@
 import AuctionListPage from "./auction-list-page";
 import AuctionPage, { AuctionPageLoading } from "./auction-page";
-import { useAuctionsV2 } from "modules/auction/hooks/use-auctionsv2";
+import { useAuctions } from "modules/auction/hooks/use-auctions";
 
 export function PageBrancher() {
-  const auctionQuery = useAuctionsV2();
+  const auctionQuery = useAuctions();
 
   if (auctionQuery.isLoading) return <AuctionPageLoading />;
 

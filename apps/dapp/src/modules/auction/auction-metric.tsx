@@ -5,15 +5,13 @@ import {
   type Auction,
   type PropsWithAuction,
 } from "@axis-finance/types";
-import { Metric, MetricProps, Tooltip, useToggle } from "@repo/ui";
+import { Metric, MetricProps, useToggle } from "@repo/ui";
 import { trimCurrency } from "utils/currency";
 import { shorten, formatPercentage } from "utils/number";
 import { getCallbacksType } from "./utils/get-callbacks-type";
 import { getMinFilled, getPrice, hasDerivative } from "./utils/auction-details";
 import { formatDate, getDaysBetweenDates } from "utils/date";
 import { Format } from "modules/token/format";
-import { getCurator } from "modules/app/curators";
-import { InfoIcon } from "lucide-react";
 import { UsdAmount } from "./usd-amount";
 import { ToggledUsdAmount } from "./toggled-usd-amount";
 import { DtlProceedsDisplay } from "./dtl-proceeds-display";
@@ -348,24 +346,6 @@ const handlers: MetricHandlers = {
     label: "Ended",
     handler: (auction) => {
       return `${auction.formatted?.endDistance} ago`;
-    },
-  },
-  curator: {
-    label: "Curator",
-    handler: (auction) => {
-      if (!auction.curator) return undefined;
-
-      const curator = getCurator(auction.curator);
-
-      if (!curator) return undefined;
-
-      return (
-        <Tooltip content={"ok"} contentClassName="max-w-xl">
-          <div className="flex items-center gap-x-2">
-            {curator.name} <InfoIcon size="20" />
-          </div>
-        </Tooltip>
-      );
     },
   },
   saleType: {

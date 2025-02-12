@@ -7,18 +7,25 @@ export const AUCTION_TOKEN_ADDRESS =
 export const PRODUCTION_URL = "app.axis.finance";
 export const TESTNET_URL = "testnet.axis.finance";
 
+export const AXIS_DOCS_URL = "https://docs.axis.finance";
+
 //Assets
 export const LOGO_URL = "";
 
+//App Metadata
+export const APP_NAME = "Axis Finance";
+export const WALLET_DISCLAIMER_MESSAGE =
+  "This application is in alpha stage, so there&apos;s obviously bugs and broken stuff.";
+
 //Socials
-export const DISCORD = "https://discord.gg/tx9CrvPZWF";
-export const TWITTER = "https://twitter.com/axis_fi";
-export const WEBSITE = "https://axis.finance";
-export const CONTACT = "https://gkk12lnayco.typeform.com/to/ml7zCK52"; //"hello@axis.finance";
+export const DISCORD_URL = "https://discord.gg/tx9CrvPZWF";
+export const TWITTER_URL = "https://twitter.com/axis_fi";
+export const WEBSITE_URL = "https://axis.finance";
+export const CONTACT_URL = "https://gkk12lnayco.typeform.com/to/ml7zCK52"; //"hello@axis.finance";
 
 export const SOCIALS = {
-  DISCORD,
-  TWITTER,
-  WEBSITE,
-  CONTACT,
+  DISCORD_URL,
+  TWITTER_URL,
+  WEBSITE_URL,
+  CONTACT_URL,
 };
