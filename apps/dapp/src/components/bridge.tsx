@@ -1,5 +1,6 @@
 import { Widget } from "@xyfinance/widget";
 import { useTokenLists } from "state/tokenlist";
+import { environment } from "utils/environment";
 
 const disabledChains = [
   //disable smol L2's for now
@@ -27,6 +28,12 @@ type BridgeOrder = {
 
 export function Bridge({ targetChainId, order }: BridgeProps) {
   const { lists } = useTokenLists();
+
+  if (environment.isTestnet) {
+    return (
+      <div className="text-center">Bridge is not available on testnets</div>
+    );
+  }
 
   //Feature tokens from our tokenlist for specified chain
   const tokens = lists
