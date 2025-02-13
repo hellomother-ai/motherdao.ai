@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Skeleton, useToggle } from "@repo/ui";
+import { Skeleton, Text, useToggle } from "@repo/ui";
 import {
   type PropsWithAuction,
   type AuctionStatus,
@@ -24,7 +24,8 @@ import { Countdown } from "modules/auction/countdown";
 import AuctionProgressBar from "modules/auction/auction-progress-bar";
 import { useAccount, useSwitchChain } from "wagmi";
 import { useAuctions } from "modules/auction/hooks/use-auctions";
-import { AUCTION_CHAIN_ID } from "../../../../app-config";
+import { AUCTION_CHAIN_ID, BANNER_URL } from "../../../../app-config";
+import { getLinkUrl } from "modules/auction/utils/auction-details";
 
 const statuses: Record<
   AuctionStatus,
@@ -118,6 +119,18 @@ export function AuctionPageView({
   auction: Auction;
   isAuctionLoading?: boolean;
 }>) {
+  const bannerUrl = BANNER_URL ?? getLinkUrl("projectBanner", auction);
+
+  if (bannerUrl) {
+    return (
+      <AuctionPageViewWithBanner
+        bannerUrl={bannerUrl}
+        auction={auction}
+        {...props}
+      />
+    );
+  }
+
   return (
     <div className="">
       <div className="mb-4 flex justify-center">
@@ -139,6 +152,50 @@ export function AuctionPageLoading() {
         </div>
       </PageContainer>
     </div>
+  );
+}
+
+export function AuctionPageViewWithBanner({
+  auction,
+  isAuctionLoading,
+  bannerUrl,
+  ...props
+}: React.PropsWithChildren<{
+  auction: Auction;
+  isAuctionLoading?: boolean;
+  bannerUrl: string;
+}>) {
+  return (
+    <>
+      <ImageBanner isLoading={isAuctionLoading} imgUrl={bannerUrl}>
+        <div className="max-w-limit flex h-full w-full flex-row flex-wrap">
+          <div className="mb-10 flex w-full flex-col items-center justify-end">
+            <div className="relative mb-2 self-center text-center">
+              <div className="border-primary absolute inset-0 top-3 -z-10 -ml-10 size-full w-[120%] border bg-neutral-950 blur-2xl" />
+              <Text
+                size="7xl"
+                mono
+                className="text-neutral-200 dark:text-neutral-700"
+              >
+                {auction.info?.name}
+              </Text>
+
+              <Text
+                size="3xl"
+                color="secondary"
+                className={
+                  "mx-auto w-fit text-nowrap text-neutral-200 dark:text-neutral-700"
+                }
+              >
+                {!isAuctionLoading && auction.info?.tagline}
+              </Text>
+            </div>
+            <AuctionProgressBar auction={auction} />
+          </div>
+        </div>
+      </ImageBanner>
+      {props.children}
+    </>
   );
 }
 

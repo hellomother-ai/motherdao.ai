@@ -11,6 +11,8 @@ export const AXIS_DOCS_URL = "https://docs.axis.finance";
 
 //Assets
 export const LOGO_URL = "";
+export const BANNER_URL =
+  "https://t4.ftcdn.net/jpg/02/71/29/75/360_F_271297554_0DAlzyFb8jzYg0lfmUOzyhtMer0orz4h.jpg";
 
 //App Metadata
 export const APP_NAME = "Axis Finance";
