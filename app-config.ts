@@ -1,7 +1,7 @@
 //Auction Configuration
 export const AUCTION_CHAIN_ID = 84532;
 export const AUCTION_TOKEN_ADDRESS =
-  "0x0c5CD8F8e7D6995A67568f87969332f5C902e520".toLowerCase();
+  "0xB24C548d3349de64DF77f4E924B6e7d354001A3A".toLowerCase();
 
 // App Configuration
 export const PRODUCTION_URL = "app.axis.finance";
