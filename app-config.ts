@@ -5,7 +5,7 @@ export const AUCTION_TOKEN_ADDRESS =
 
 // App Configuration
 export const PRODUCTION_URL = "app.axis.finance";
-export const TESTNET_URL = "testnet.axis.finance";
+export const TESTNET_URL = "https://testnet.axis.finance/#/84532/30";
 
 export const AXIS_DOCS_URL = "https://docs.axis.finance";
 
