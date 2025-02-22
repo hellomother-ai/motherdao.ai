@@ -22,7 +22,7 @@ export function PageHeader({
   return (
     <div
       className={cn(
-        "grid w-full grid-cols-2 grid-rows-2 items-center justify-between justify-items-center gap-y-4 lg:my-5 lg:mt-2 lg:flex lg:justify-center",
+        "grid w-full grid-cols-2 grid-rows-2 items-center justify-between justify-items-center gap-y-4 text-white lg:my-5 lg:mt-2 lg:flex lg:justify-center",
         className,
         backNavigationPath && "lg:justify-between",
       )}
@@ -30,7 +30,7 @@ export function PageHeader({
       {backNavigationPath && (
         <Button
           size="icon"
-          className="row-start-1 lg:w-1/5"
+          className="row-start-1 text-white hover:text-gray-300 lg:w-1/5"
           variant="ghost"
           //both string and number are valid but on different signatures
           onClick={() => navigate(backNavigationPath ?? -1)}
@@ -41,10 +41,12 @@ export function PageHeader({
           </div>
         </Button>
       )}
-      <div className="col-span-2 row-start-2 mx-auto ">{children}</div>
+      <div className="col-span-2 row-start-2 mx-auto text-white">
+        {children}
+      </div>
 
       {toggle && (
-        <div className="flex w-full items-center justify-end lg:w-1/5 lg:pr-0">
+        <div className="flex w-full items-center justify-end text-white lg:w-1/5 lg:pr-0">
           {<UsdToggle currencySymbol={toggleSymbol} />}
         </div>
       )}
