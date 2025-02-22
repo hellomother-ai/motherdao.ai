@@ -9,35 +9,7 @@ import {
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { environment } from "utils/environment";
-import { AXIS_DOCS_URL } from "../../../../../app-config";
-type LinkConfig = {
-  label: string;
-  href: string;
-  target?: React.HTMLProps<HTMLAnchorElement>["target"];
-  /**Whether the link should render on testnets*/
-  disabledOnTestnet?: boolean;
-};
-
-export const testnetLinks = [
-  { label: "Faucet", href: "/faucet" },
-  { label: "Deploy", href: "/deploy" },
-];
-
-export const defaultLinks = [
-  { label: "Raises", href: "/#" },
-] satisfies LinkConfig[];
-
-export const mobileSideLinks = [
-  { label: "Tokenomics", href: "/bridge" },
-  { label: "Bridge", href: "/bridge", disabledOnTestnet: true },
-  {
-    label: "Docs",
-    href: AXIS_DOCS_URL,
-    target: "_blank",
-  },
-] satisfies LinkConfig[];
-
-export const desktopLinks = [...defaultLinks, ...mobileSideLinks];
+import { LinkConfig, defaultLinks, desktopLinks } from "./navigation-config";
 
 type NavbarProps = {
   links?: LinkConfig[];
@@ -57,13 +29,14 @@ export default function Navbar(props: NavbarProps) {
     if (props.onlyDefault) return defaultLinks;
 
     return props.mobile && !props.showAll ? defaultLinks : desktopLinks;
-  }, [props.links, props.onlyDefault]);
+  }, [props.links, props.onlyDefault, props.mobile, props.showAll]);
 
   return (
     <NavigationMenu>
       <NavigationMenuList
         className={cn(
           props.mobile && "flex w-full flex-col items-end",
+          "bg-black text-white",
           props.className,
         )}
       >
@@ -78,8 +51,8 @@ export default function Navbar(props: NavbarProps) {
                       variant="link"
                       onClick={() => props.onNavClick?.()}
                       className={cn(
-                        "text-foreground px-2 uppercase",
-                        (isActive || (isRoot && l.href === "/auctions")) && //TODO: check if theres a better way with react-router
+                        "px-2 uppercase text-white hover:text-gray-300",
+                        (isActive || (isRoot && l.href === "/auctions")) &&
                           "text-primary",
                       )}
                     >
