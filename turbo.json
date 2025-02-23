@@ -16,8 +16,6 @@
     "storybook": {
       "cache": false,
       "persistent": true
-    },
-    "test": {},
-    "test:unit": {}
+    }
   }
 }
