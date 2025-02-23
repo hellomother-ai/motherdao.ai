@@ -24,23 +24,29 @@ const Progress = React.forwardRef<
     <ProgressPrimitive.Root
       ref={ref}
       className={cn(
-        "bg-primary-500 relative h-10 w-full overflow-hidden",
+        "relative h-10 w-full overflow-hidden bg-neutral-50",
         className,
       )}
       {...props}
     >
-      <span className="z-10" style={{ left: `${currentPercentage}%` }}>
+      <span
+        className="z-10 text-neutral-900 dark:text-neutral-50"
+        style={{
+          left: `${currentPercentage}%`,
+          color: currentPercentage > 0 ? "#F5F5EF" : undefined,
+        }}
+      >
         {props.children}
       </span>
 
       <ProgressPrimitive.Indicator
-        className="bg-surface-progress absolute flex h-full w-full items-center justify-end transition-all"
+        className="absolute flex h-full w-full items-center justify-end bg-neutral-900 transition-all" // Midnight Mass background
         style={{ width: `${currentPercentage}%` }}
-      ></ProgressPrimitive.Indicator>
+      />
 
       {showMinTarget && (
         <div
-          className="absolute h-full w-1 border-l-[2px] border-dashed"
+          className="absolute h-full w-1 border-l-[2px] border-dashed border-neutral-900 dark:border-neutral-50" // Light border in dark mode
           style={{ left: `${minTarget}%` }}
         />
       )}

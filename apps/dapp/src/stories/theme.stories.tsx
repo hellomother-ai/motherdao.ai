@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Text, cn } from "@repo/ui";
+import type { StoryObj } from "@storybook/react";
+import { cn } from "@repo/ui";
 
 const meta = {
   title: "Themes",

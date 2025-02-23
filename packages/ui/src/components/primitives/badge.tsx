@@ -5,14 +5,16 @@ import { cn } from "@/utils";
 import { Avatar } from "./avatar";
 
 const badgeVariants = cva(
-  "inline-flex h-min items-center justify-center rounded-full border uppercase transition-colors border-0 py-1 px-2 ",
+  "inline-flex h-min items-center justify-center rounded-full border uppercase transition-colors border-0 py-1 px-2",
   {
     variants: {
       color: {
-        active: "bg-feedback-success",
+        active: "bg-feedback-success text-neutral-50",
         alert: "bg-feedback-alert text-neutral-50",
-        ghost: "bg-app",
-        blue: "bg-primary-500 text-black-50",
+        ghost: "bg-app text-foreground",
+        primary: "bg-neutral-900 text-neutral-50",
+        secondary: "bg-neutral-50 text-neutral-900 border border-neutral-900",
+        tertiary: "bg-neutral-200 text-neutral-900",
       },
       size: {
         s: "text-sm",

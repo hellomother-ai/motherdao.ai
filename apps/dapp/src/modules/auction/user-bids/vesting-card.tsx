@@ -129,9 +129,6 @@ export function VestingCard({ auction }: PropsWithAuction) {
       ? (vestingProgress / 100) * userTotalTokensWon
       : 0);
 
-  const vestingBadgeColour =
-    vestingProgress >= 100 ? "active" : vestingProgress < 0 ? "ghost" : "blue";
-
   const vestingBadgeText =
     vestingProgress >= 100
       ? "Complete"
@@ -155,9 +152,7 @@ export function VestingCard({ auction }: PropsWithAuction) {
   return (
     <Card
       title={`${shouldShowClaimVesting ? "Claim" : "Redeem"}`}
-      headerRightElement={
-        <Badge color={vestingBadgeColour}>{vestingBadgeText}</Badge>
-      }
+      headerRightElement={<Badge>{vestingBadgeText}</Badge>}
     >
       <div className="gap-y-md flex flex-col">
         <BidOutcome auction={auction} />

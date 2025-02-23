@@ -1,10 +1,4 @@
-import {
-  cn,
-  Link,
-  DiscordLogoIcon,
-  TwitterLogoIcon,
-  GlobeIcon,
-} from "@repo/ui";
+import { cn, Link, TwitterLogoIcon, GlobeIcon } from "@repo/ui";
 
 type SocialURLs = {
   discord?: string;
@@ -22,14 +16,6 @@ export function SocialRow(props: SocialURLs) {
         <Link href={props.twitter}>
           <TwitterLogoIcon
             className={cn("size-4 hover:text-[#1DA1F2]", props.iconClassName)}
-          />
-        </Link>
-      )}
-
-      {props.discord && (
-        <Link href={props.discord}>
-          <DiscordLogoIcon
-            className={cn("size-4 hover:text-[#7289da]", props.iconClassName)}
           />
         </Link>
       )}

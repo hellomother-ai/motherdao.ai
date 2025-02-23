@@ -1,8 +1,6 @@
-import { Button, Link, Tooltip, cn, useTheme } from "@repo/ui";
+import { Button, Link, cn } from "@repo/ui";
 import { SocialRow } from "../../components/social-row";
 import { SOCIALS } from "../../../../../app-config";
-import { AppVersion } from "./app-version";
-import { AxisWordmark } from "./axis-wordmark";
 
 const { DISCORD_URL, TWITTER_URL, WEBSITE_URL, CONTACT_URL } = SOCIALS;
 
@@ -15,8 +13,6 @@ export function AppFooter() {
           "bg-neutral-200 dark:bg-neutral-50",
         )}
       >
-        <PoweredByAxis />
-
         <div
           className={cn(
             "text-surface flex items-center gap-x-3 px-4",
@@ -43,28 +39,6 @@ export function AppFooter() {
           </Link>
         </div>
       </div>
-    </div>
-  );
-}
-
-function PoweredByAxis() {
-  const { themeColor } = useTheme();
-  return (
-    <div className="text-foreground ml-4 flex items-center dark:text-neutral-500">
-      {" "}
-      <Tooltip
-        content={
-          <>
-            App Version: <AppVersion />
-          </>
-        }
-      >
-        Powered by{" "}
-        <AxisWordmark
-          className="-mt-0.5 inline size-10"
-          light={themeColor === "dark"}
-        />
-      </Tooltip>
     </div>
   );
 }

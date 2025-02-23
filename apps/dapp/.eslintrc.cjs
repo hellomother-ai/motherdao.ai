@@ -17,7 +17,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   rules: {
-    "@typescript-eslint/ban-ts-comment": 1,
+    "@typescript-eslint/ban-ts-comment": "warn",
     // "@typescript-eslint/strict-boolean-expressions": "error",
   },
 };

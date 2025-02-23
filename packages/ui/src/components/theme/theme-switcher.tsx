@@ -11,9 +11,8 @@ export function ThemeSwitcher() {
   return (
     <Button
       onClick={() => setTheme(isLight ? "dark" : "light")}
+      variant="ghost"
       size="icon"
-      variant="link"
-      className="text-tertiary-300 dark:text-tertiary-300-highlight"
     >
       <ThemeIcon size={24} />
     </Button>

@@ -1,5 +1,5 @@
 import {
-  createHashRouter,
+  createBrowserRouter,
   RouterProvider as ReactRouterProvider,
 } from "react-router-dom";
 import ErrorPage from "../pages/error-page";
@@ -10,7 +10,7 @@ import { DeployTokenPage } from "pages/deploy-token-page";
 import { BridgePage } from "pages/bridge-page";
 import { PageBrancher } from "pages/page-brancher";
 
-const router: ReturnType<typeof createHashRouter> = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/*",
     element: <App />,

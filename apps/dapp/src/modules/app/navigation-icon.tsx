@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { LOGO_URL } from "../../../../../app-config";
-import AxisIcon from "./axis-icon";
+import AxisIcon from "./mother-icon";
 
 export function NavigationIcon() {
   return (
@@ -9,11 +8,7 @@ export function NavigationIcon() {
       to="/"
     >
       <div className="flex gap-x-2">
-        {LOGO_URL === "" ? (
-          <AxisIcon />
-        ) : (
-          <img src={LOGO_URL} className="size-12 rounded-full" />
-        )}
+        <AxisIcon />
       </div>
     </Link>
   );

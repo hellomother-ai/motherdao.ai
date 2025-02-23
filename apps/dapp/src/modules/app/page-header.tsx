@@ -1,6 +1,4 @@
-import { Button, UsdToggle, cn } from "@repo/ui";
-import { ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { UsdToggle, cn } from "@repo/ui";
 
 type PageHeaderProps = React.HTMLAttributes<HTMLDivElement> & {
   backNavigationPath?: string;
@@ -12,13 +10,10 @@ type PageHeaderProps = React.HTMLAttributes<HTMLDivElement> & {
 export function PageHeader({
   className,
   backNavigationPath,
-  backNavigationText = "Back to Launches",
   children,
   toggle,
   toggleSymbol = "Quote",
 }: PageHeaderProps) {
-  const navigate = useNavigate();
-  console.log({ toggle });
   return (
     <div
       className={cn(
@@ -27,20 +22,6 @@ export function PageHeader({
         backNavigationPath && "lg:justify-between",
       )}
     >
-      {backNavigationPath && (
-        <Button
-          size="icon"
-          className="row-start-1 lg:w-1/5"
-          variant="ghost"
-          //both string and number are valid but on different signatures
-          onClick={() => navigate(backNavigationPath ?? -1)}
-        >
-          <div className="relative -ml-4">
-            <ArrowLeft className="absolute -left-7" />
-            {backNavigationText}
-          </div>
-        </Button>
-      )}
       <div className="col-span-2 row-start-2 mx-auto ">{children}</div>
 
       {toggle && (

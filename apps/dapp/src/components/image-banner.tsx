@@ -6,7 +6,7 @@ type ImageBannerProps = React.HTMLProps<HTMLDivElement> & {
   isLoading?: boolean;
 };
 
-/** Renders an image blurred as a banner with a gradient */
+/** Renders an image as a full-width banner */
 export function ImageBanner({
   imgUrl,
   children,
@@ -22,26 +22,10 @@ export function ImageBanner({
       )}
     >
       <div
-        className={cn(
-          "saturate-75 absolute h-[480px] w-[150%] blur-md lg:block",
-          !isLoading && "bg-center",
-        )}
+        className="absolute h-full w-full bg-cover bg-center"
         style={
           imgUrl
             ? {
-                backgroundImage: `url(${imgUrl})`,
-                backgroundSize: "200% 480px",
-                clipPath: "inset(0 0 0 0)",
-              }
-            : {}
-        }
-      />
-      <div
-        className="absolute h-full w-dvw bg-center bg-no-repeat "
-        style={
-          imgUrl
-            ? {
-                backgroundSize: "auto 480px",
                 backgroundImage: `url(${imgUrl})`,
               }
             : {}

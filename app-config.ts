@@ -9,10 +9,8 @@ export const TESTNET_URL = "https://testnet.axis.finance/#/84532/30";
 
 export const AXIS_DOCS_URL = "https://docs.axis.finance";
 
-//Assets
-export const LOGO_URL = "";
 export const BANNER_URL =
-  "https://t4.ftcdn.net/jpg/02/71/29/75/360_F_271297554_0DAlzyFb8jzYg0lfmUOzyhtMer0orz4h.jpg";
+  "https://amused-attraction-096.notion.site/image/attachment%3A12369a12-934e-4bed-8117-1d6da1f0de04%3A100-mother-social-exportsDiscord_Server_Banner_960x540.jpg?table=block&id=9178be5f-2c7f-4833-b87b-3be796eb92bb&spaceId=c94c8543-2a46-45ce-8bfd-a0228166a7a1&width=2000&userId=&cache=v2";
 
 //App Metadata
 export const APP_NAME = "Axis Finance";
@@ -21,8 +19,8 @@ export const WALLET_DISCLAIMER_MESSAGE =
 
 //Socials
 export const DISCORD_URL = "https://discord.gg/tx9CrvPZWF";
-export const TWITTER_URL = "https://twitter.com/axis_fi";
-export const WEBSITE_URL = "https://axis.finance";
+export const TWITTER_URL = "https://x.com/hellomother_ai";
+export const WEBSITE_URL = "https://www.hellomother.ai/";
 export const CONTACT_URL = "https://gkk12lnayco.typeform.com/to/ml7zCK52"; //"hello@axis.finance";
 
 export const SOCIALS = {

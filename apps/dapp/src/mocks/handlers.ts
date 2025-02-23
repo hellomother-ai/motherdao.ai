@@ -6,20 +6,49 @@ import { getChainById } from "utils/chain";
 
 export const handlers = [
   graphql.query("getAuctionLots", ({ variables }) => {
-    const chain = getChainById(variables?.chainId);
-    const chainName = chain?.name?.replace(/ /g, "-").toLowerCase();
+    try {
+      const chain = getChainById(variables?.chainId);
+      if (!chain) {
+        return HttpResponse.json(
+          { errors: [{ message: "Invalid chain ID" }] },
+          { status: 400 },
+        );
+      }
 
-    return HttpResponse.json({
-      data: stubGetAuctionLotsQuery({ chain: chainName }),
-    });
+      const chainName = chain.name?.replace(/ /g, "-").toLowerCase();
+      return HttpResponse.json({
+        data: stubGetAuctionLotsQuery({ chain: chainName }),
+      });
+    } catch (error) {
+      console.error("Error in getAuctionLots handler:", error);
+      return HttpResponse.json(
+        { errors: [{ message: "Internal server error" }] },
+        { status: 500 },
+      );
+    }
   }),
-  graphql.query("getBatchAuctionLot", ({ variables }) => {
-    const id = variables?.id;
-    const chain = extractChainName(id);
-    const lotId = id.substring(id.lastIndexOf("-") + 1);
 
-    return HttpResponse.json({
-      data: stubGetBatchAuctionLotQuery({ id, lotId, chain }),
-    });
+  graphql.query("getBatchAuctionLot", ({ variables }) => {
+    try {
+      if (!variables?.id) {
+        return HttpResponse.json(
+          { errors: [{ message: "Missing ID parameter" }] },
+          { status: 400 },
+        );
+      }
+
+      const chain = extractChainName(variables.id);
+      const lotId = variables.id.substring(variables.id.lastIndexOf("-") + 1);
+
+      return HttpResponse.json({
+        data: stubGetBatchAuctionLotQuery({ id: variables.id, lotId, chain }),
+      });
+    } catch (error) {
+      console.error("Error in getBatchAuctionLot handler:", error);
+      return HttpResponse.json(
+        { errors: [{ message: "Internal server error" }] },
+        { status: 500 },
+      );
+    }
   }),
 ];
