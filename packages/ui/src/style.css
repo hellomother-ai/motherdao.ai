@@ -6,6 +6,30 @@
 
 @layer base {
   :root {
+    /* Base colors - new palette */
+    --holy-light: 60 20% 95%; /* #F5F5EF */
+    --holy-light-90: 60 20% 90%; /* #EBEBE2 */
+    --holy-light-80: 60 20% 85%; /* #E0E0D4 */
+    --midnight-mass: 220 4% 8%; /* #121314 */
+    --midnight-mass-90: 220 4% 12%; /* #1D1E20 */
+    --midnight-mass-80: 220 4% 16%; /* #28292C */
+    --pale: 60 20% 95%; /* #F5F5EF */
+    --midpage: 0 0% 81%; /* #CECECE */
+    --ocean: 197 16% 58%; /* #7C9FAA */
+    --terra: 22 36% 63%; /* #C7987C */
+
+    /* Modify neutral colors to avoid pure black/white */
+    --gray-50: var(--holy-light);
+    --gray-100: 60 17% 95%;
+    --gray-200: 0 0% 81%; /* midpage */
+    --gray-300: 197 16% 58%; /* ocean */
+    --gray-400: 22 36% 63%; /* terra */
+    --gray-500: 22 36% 53%;
+    --gray-600: 220 4% 18%;
+    --gray-700: 220 4% 14%;
+    --gray-800: 220 4% 10%;
+    --gray-900: var(--midnight-mass);
+
     /* Base colors, theme agnostic, primitive */
     --blue-400: 201 88% 71%;
     --blue-600: 220 65% 60%;
@@ -21,17 +45,7 @@
     --red-500: 11 100% 63%;
     --red-600: 0 100% 51%;
 
-    --gray-50: 0 0% 100%;
-    --gray-100: 60 17% 95%;
-    --gray-200: 60 5% 89%;
-    --gray-300: 60 21% 90%;
-    --gray-400: 60 22% 80%;
-    --gray-500: 60 15% 74%;
-    --gray-600: 287 10% 38%;
     --gray-650: 287 10% 38%;
-    --gray-700: 291 10% 28%;
-    --gray-800: 288 10% 20%;
-    --gray-900: 290 9% 14%;
 
     /* Brand colors, theme agnostic, semantic */
     /* TODO: move to dapp stylesheet since its brand specific? */
@@ -91,20 +105,15 @@
   }
 
   .light {
-    /* Theme colors */
-    --app: 270 8% 95%;
+    --app: var(--holy-light);
 
-    --neutral-50: var(--gray-50);
-    --neutral-100: var(--gray-100);
-    --neutral-200: var(--gray-200);
-    --neutral-300: var(--gray-300);
-    --neutral-400: var(--gray-400);
-    --neutral-500: var(--gray-500);
-    --neutral-600: var(--gray-600);
-    --neutral-650: var(--gray-650);
-    --neutral-700: var(--gray-700);
-    --neutral-800: var(--gray-800);
-    --neutral-900: var(--gray-900);
+    /* Adjust neutral scale for light theme */
+    --neutral-50: var(--holy-light);
+    --neutral-100: var(--pale);
+    --neutral-200: var(--midpage);
+    --neutral-300: var(--ocean);
+    --neutral-400: var(--terra);
+    --neutral-900: var(--midnight-mass);
 
     --secondary-100: var(--green-100);
     --secondary-200: var(--green-200);
@@ -118,20 +127,15 @@
   }
 
   .dark {
-    /* Theme colors */
-    --app: 270 8% 5%;
+    --app: var(--midnight-mass);
 
-    --neutral-50: var(--gray-900);
-    --neutral-100: var(--gray-800);
-    --neutral-200: var(--gray-700);
-    --neutral-300: var(--gray-650);
-    --neutral-400: var(--gray-600);
-    --neutral-500: var(--gray-500);
-    --neutral-600: var(--gray-400);
-    --neutral-650: var(--gray-300);
-    --neutral-700: var(--gray-200);
-    --neutral-800: var(--gray-100);
-    --neutral-900: var(--gray-50);
+    /* Adjust neutral scale for dark theme */
+    --neutral-50: var(--midnight-mass);
+    --neutral-100: 220 4% 10%;
+    --neutral-200: 220 4% 14%;
+    --neutral-300: var(--terra);
+    --neutral-400: var(--ocean);
+    --neutral-900: var(--holy-light);
 
     --secondary-100: var(--green-100);
     --secondary-200: var(--green-200);
@@ -172,6 +176,11 @@
     --text-primary: var(--neutral-900);
     --text-secondary: var(--neutral-700);
     --text-tertiary: var(--neutral-600);
+  }
+
+  /*prettier-ignore*/
+  h1, h2, h3, h4 {
+    @apply scroll-m-20 tracking-tight
   }
 }
 
@@ -234,11 +243,6 @@
 
   body {
     @apply bg-background text-foreground;
-  }
-
-  /*prettier-ignore*/
-  h1, h2, h3, h4 {
-    @apply scroll-m-20 tracking-tight;
   }
 
   h1 {

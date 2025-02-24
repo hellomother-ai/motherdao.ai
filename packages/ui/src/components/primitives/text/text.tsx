@@ -33,6 +33,7 @@ const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
     ref,
   ) => {
     const Element = (as ?? (size ? sizeMap[size] : sizeMap.default)) as "div";
+    const isHeading = Element.startsWith("h");
 
     return (
       <Element
@@ -41,6 +42,7 @@ const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
           mono && "font-mono",
           uppercase && "uppercase",
           spaced && "tracking-[1.2px]",
+          isHeading ? "font-bomiro" : "font-concrete",
         )}
         ref={ref}
         {...props}

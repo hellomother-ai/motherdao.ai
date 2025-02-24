@@ -1,4 +1,4 @@
 {
   "extends": "./tsconfig.json",
-  "exclude": ["src/**/*.stories.*", "cypress", "src/mocks"]
+  "exclude": ["src/**/*.stories.*", "cypress"]
 }

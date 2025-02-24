@@ -27,9 +27,9 @@ export type TextColor = "primary" | "secondary" | "tertiary";
 export const textVariants = cva("text-sans", {
   variants: {
     color: {
-      primary: "text-foreground-primary",
-      secondary: "text-foreground-secondary",
-      tertiary: "text-surface", //TODO: couldnt find a light color for text in the DS
+      primary: "text-neutral-900", // Midnight Mass #121314
+      secondary: "text-neutral-700", // Slightly lighter than primary
+      tertiary: "text-neutral-50", // Holy Light #F5F5EF
     },
     size,
     weight,

@@ -51,10 +51,7 @@ type ProgressMetricProps = {
 function ProgressMetric(props: ProgressMetricProps) {
   return (
     <div className={cn("flex flex-col gap-y-0.5 px-2.5", props.className)}>
-      <Text
-        mono
-        className="dark:text-background -mt-1 font-bold leading-none lg:text-lg"
-      >
+      <Text mono className="-mt-1 font-bold leading-none lg:text-lg">
         <ToggledUsdAmount
           token={props.auction.quoteToken}
           amount={props.value}
@@ -64,11 +61,7 @@ function ProgressMetric(props: ProgressMetricProps) {
         />
       </Text>
 
-      <Text
-        mono
-        uppercase
-        className="text-foreground dark:text-background p-0 leading-none"
-      >
+      <Text mono uppercase className="text-foreground p-0 leading-none">
         {props.label}
       </Text>
     </div>

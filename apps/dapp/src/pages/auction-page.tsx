@@ -31,7 +31,7 @@ const statuses: Record<
   AuctionStatus,
   (props: PropsWithAuction) => React.ReactNode
 > = {
-  registering: () => null, // Registration state is not handled in this component, but in auction-registering.tsx
+  registering: () => null,
   created: AuctionCreated,
   live: AuctionLive,
   concluded: EncryptedMarginalPriceAuctionConcluded,
@@ -175,17 +175,14 @@ export function AuctionPageViewWithBanner({
               <Text
                 size="7xl"
                 mono
-                className="text-neutral-200 dark:text-neutral-700"
+                className="text-[#F5F5EF] dark:text-neutral-700"
               >
                 {auction.info?.name}
               </Text>
 
               <Text
                 size="3xl"
-                color="secondary"
-                className={
-                  "mx-auto w-fit text-nowrap text-neutral-200 dark:text-neutral-700"
-                }
+                className="mx-auto w-fit text-nowrap text-[#F5F5EF] dark:text-neutral-700"
               >
                 {!isAuctionLoading && auction.info?.tagline}
               </Text>

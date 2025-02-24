@@ -52,7 +52,7 @@ export function generateReferrerLink(addr: string, path = "") {
   const urlEncoded = urlSafe(encoded);
 
   // Create link
-  const link = window.location.origin + "/#" + path + "?ref=" + urlEncoded;
+  const link = window.location.origin + path + "?ref=" + urlEncoded;
 
   return link;
 }

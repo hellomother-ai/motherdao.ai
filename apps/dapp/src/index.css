@@ -4,34 +4,23 @@
   :root {
     --axis-rainbow: linear-gradient(
       100deg,
-      rgba(110, 148, 240, 1) 2%,
-      rgba(118, 189, 242, 1) 10%,
-      rgba(206, 244, 117, 1) 32%,
-      rgba(243, 244, 189, 1) 49%,
-      rgba(243, 244, 189, 1) 52%,
-      rgba(246, 172, 84, 1) 79%,
-      rgba(242, 103, 64, 1) 100%
+      hsl(var(--holy-light)) 0%,
+      hsl(var(--midpage)) 50%,
+      hsl(var(--ocean)) 75%,
+      hsl(var(--terra)) 100%
     );
+
     --axis-rainbow-reverse: linear-gradient(
       30deg,
-      rgba(255, 102, 68, 1) 0%,
-      rgba(254, 176, 85, 1) 12.5%,
-      rgba(255, 216, 139, 1) 24.99%,
-      rgba(253, 238, 162, 1) 37.49%,
-      rgba(244, 245, 193, 1) 49.99%,
-      rgba(242, 254, 165, 1) 62.48%,
-      rgba(205, 246, 117, 1) 74.98%,
-      rgba(117, 200, 246, 1) 87.48%,
-      rgba(117, 161, 246, 1) 100%
+      hsl(var(--terra)) 0%,
+      hsl(var(--ocean)) 33%,
+      hsl(var(--midpage)) 66%,
+      hsl(var(--holy-light)) 100%
     );
   }
 
   body {
     @apply max-h-dvh font-sans;
-  }
-
-  input {
-    @apply font-aeonpro;
   }
 
   a {

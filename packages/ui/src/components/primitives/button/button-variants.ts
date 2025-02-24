@@ -7,40 +7,35 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         primary: [
-          "bg-primary",
-          "text-neutral-50",
-          "hover:shadow-3xl",
-          "hover:bg-neutral-50",
-          "hover:text-foreground",
-          "active:shadow-active",
-          "active:bg-primary",
-          "active:text-neutral-50",
+          "bg-neutral-900", // Midnight Mass
+          "text-neutral-50", // Holy Light
+          "hover:bg-neutral-900/90", // Midnight Mass with opacity
+          "hover:text-neutral-50", // Holy Light
+          "active:bg-[hsl(var(--midnight-mass-90))]",
+          "active:text-[hsl(var(--holy-light-90))]",
         ],
         secondary: [
-          "text-neutral-900",
+          "text-neutral-900", // Midnight Mass
           "border",
-          "border-neutral-900",
-          "hover:shadow-3xl",
-          "hover:bg-primary",
-          "hover:border-transparent",
-          "hover:text-neutral-50",
-          "active:shadow-active",
-          "active:bg-transparent",
-          "active:text-neutral-900",
+          "border-neutral-900", // Midnight Mass
+          "hover:bg-[hsl(var(--holy-light-90))]",
+          "hover:text-neutral-900", // Midnight Mass
+          "active:bg-[hsl(var(--holy-light-80))]",
+          "active:text-[hsl(var(--midnight-mass-90))]",
         ],
         ghost: [
-          "text-neutral-800",
-          "hover:text-primary",
-          "active:text-neutral-900",
-          "active:shadow-active",
+          "text-neutral-900", // Midnight Mass
+          "hover:bg-[hsl(var(--holy-light-90))]",
+          "hover:text-[hsl(var(--midnight-mass-90))]",
+          "active:bg-[hsl(var(--holy-light-80))]",
+          "active:text-[hsl(var(--midnight-mass-80))]",
         ],
         link: [
-          "text-primary",
+          "text-neutral-900", // Midnight Mass
           "border-b",
           "border-b-transparent",
-          "hover:border-b",
-          "hover:border-b-primary",
-          "hover:text-foreground",
+          "hover:border-b-[hsl(var(--midnight-mass-90))]",
+          "hover:text-[hsl(var(--midnight-mass-90))]",
           "tracking-wider",
         ],
         input: "rounded-full border-input",

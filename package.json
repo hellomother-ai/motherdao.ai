@@ -3,15 +3,10 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "postbuild": "turbo run lint",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md,json,css,html}\"",
-    "prepare": "husky",
-    "storybook": "turbo run storybook",
-    "test": "turbo run test",
-    "test:unit": "turbo run test:unit"
+    "format": "prettier --write \"**/*.{ts,tsx,md,json,css,html}\""
   },
   "devDependencies": {
     "husky": "^9.0.6",

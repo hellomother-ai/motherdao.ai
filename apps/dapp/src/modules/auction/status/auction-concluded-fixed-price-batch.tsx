@@ -8,6 +8,7 @@ import { LoadingIndicator } from "modules/app/loading-indicator";
 import { SettleAuctionCallbackInput } from "./settle-callback-input";
 import { SettleAuctionDtlCallbackBalance } from "./settle-dtl-callback-balance";
 import { AuctionCoreMetrics } from "../auction-core-metrics";
+import MotherIcon from "modules/app/mother-icon";
 
 // TODO needs story tests, given the amount of potential states
 
@@ -66,11 +67,7 @@ export function FixedPriceBatchAuctionConcluded(props: PropsWithAuction) {
           <div className="flex flex-col gap-y-4">
             <div className="green-gradient w-fill flex min-h-[244px] items-center justify-center">
               <div className="flex flex-col items-center gap-2">
-                <img
-                  className="h-[80px]"
-                  src="/images/axis-logo.svg"
-                  alt="Axis Logo"
-                />
+                <MotherIcon />
                 <Text size="xl">Auction has ended</Text>
               </div>
             </div>

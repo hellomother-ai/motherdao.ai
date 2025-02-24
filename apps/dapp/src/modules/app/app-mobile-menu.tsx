@@ -1,7 +1,6 @@
 import { CaretUpIcon } from "@radix-ui/react-icons";
-import { environment } from "utils/environment";
 import React from "react";
-import Navbar, { testnetLinks } from "./navbar";
+import Navbar from "./navbar";
 import { cn } from "@repo/ui";
 
 export function AppMobileMenu() {
@@ -17,14 +16,6 @@ export function AppMobileMenu() {
           open && "translate-x-0",
         )}
       >
-        {environment.isTestnet && (
-          <Navbar
-            mobile
-            links={testnetLinks}
-            className="border-b-tertiary-300 border-b-2"
-            onNavClick={handleCloseMenu}
-          />
-        )}
         <Navbar mobile showAll onNavClick={handleCloseMenu} />
       </div>
       <CaretUpIcon

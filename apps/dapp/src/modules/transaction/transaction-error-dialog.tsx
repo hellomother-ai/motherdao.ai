@@ -8,7 +8,9 @@ import {
 import { ReachOutMessage } from "modules/app/reach-out";
 import { getCustomException } from "utils/error-mapper";
 
-export function TransactionErrorDialog(props: { error: Error }) {
+export function TransactionErrorDialog(props: {
+  error: Error & { cause?: { reason?: string } };
+}) {
   const error = getCustomException(props.error);
 
   const handleCopy = async () => {
