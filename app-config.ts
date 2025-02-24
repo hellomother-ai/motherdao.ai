@@ -18,7 +18,7 @@ export const WALLET_DISCLAIMER_MESSAGE =
   "This application is in alpha stage, so there&apos;s obviously bugs and broken stuff.";
 
 //Socials
-export const DISCORD_URL = "https://discord.gg/tx9CrvPZWF";
+export const DISCORD_URL = "http://www.discord.gg/hellomother";
 export const TWITTER_URL = "https://x.com/hellomother_ai";
 export const WEBSITE_URL = "https://www.hellomother.ai/";
 export const CONTACT_URL = "https://gkk12lnayco.typeform.com/to/ml7zCK52"; //"hello@axis.finance";
